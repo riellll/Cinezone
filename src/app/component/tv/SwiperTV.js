@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-
+import errorPoster from '../../../../public/error-poster1.png'
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -16,10 +16,10 @@ const SwiperTV = ({onTheAir}) => {
   return (
     <>
  
-    <div className="xl:max-w-screen-xl xl:mx-auto sm:px-4 py-20">
-    <h1 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center font-semibold text-2xl subpixel-antialiased py-2 mb-5 shadow-lg shadow-blue-500/50 border-4 border-blue-800 bg-slate-200">
+    <h1 className="col-span-4 sm:col-span-2 mt-20 mx-auto max-w-screen-xl md:col-span-3 lg:col-span-4 text-center font-semibold text-2xl subpixel-antialiased py-2 mb-5 shadow-lg shadow-blue-500/50 border-4 border-blue-800 bg-slate-200">
     ON THE AIR
       </h1>
+    <div className="xl:max-w-screen-xl xl:mx-auto sm:px-4 pb-20">
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -44,15 +44,16 @@ const SwiperTV = ({onTheAir}) => {
         className="mySwiper"
       >
            {onTheAir.map((item) => {
+            const poster = item.poster_path ? `https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}` : errorPoster
             return (
               <SwiperSlide key={item.id}>
                 <Link href={`/tv-show/${item.id}`}>
                   <Image
-                    className="rounded-t-lg"
-                    src={`https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`}
+                    className="rounded-t-lg w-full h-auto"
+                    src={poster}
                     alt=""
-                    width={200}
-                    height={100}
+                    width={500}
+                    height={500}
                   />
                 </Link>
               </SwiperSlide>

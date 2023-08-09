@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import HomeLoading from "./HomeLoading";
+import HomeLoading from "./loading";
+// import { Suspense } from "react";
+// import Pagination from "./Pagination";
 
 const getData = async () => {
   const res = await fetch(
     `https://api.themoviedb.org/3/trending/all/day?language=en-US&api_key=${process.env.API_KEY}`,
-    { next: { revalidate: 5 } }
+    { next: { revalidate: 10 } }
   );
 
   if (!res) {
@@ -35,44 +37,48 @@ const getData = async () => {
 
 const All_Trending = async () => {
   const data = await getData();
-  // console.log(data);
+ /*  const page =
+    typeof searchParams.page === "string" ? Number(searchParams.page) : 1; */
+  // console.log(searchPage);
   return (
-<>
-<h1 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center text-amber-500 font-semibold text-3xl subpixel-antialiased bg-gray-800 py-2">
+    <>
+      <h1 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center text-amber-500 font-semibold text-3xl subpixel-antialiased bg-gray-800 py-2">
         All Trending
       </h1>
-    <div className="grid grid-cols-1 max-w-screen-xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 items-center justify-between mx-auto p-4">
-      
-    {data ? undefined : <HomeLoading/>}
-      {data.results.map((item) => {
-        const path = item.title ? `/movie/${item.id}` : `/tv-show/${item.id}`  
-        return (
-          <div className="max-w-full min-h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" key={item.id}>
-            <Link href={path}>
-              <Image
-                className="rounded-t-lg"
-                src={`https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`}
-                alt=""
-                width={305}
-                height={100}
-              />
-            </Link>
-            <div className="p-5">
+      <div className="grid grid-cols-1 max-w-screen-xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 items-center justify-between mx-auto p-4">
+        {!data && <HomeLoading />}
+
+        {data.results.map((item) => {
+          const path = item.title ? `/movie/${item.id}` : `/tv-show/${item.id}`;
+          return (
+            <div
+              className="max-w-full min-h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+              key={item.id}
+            >
               <Link href={path}>
-                <h5 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
-                  {item.title
-                    ? item.title
-                    : item.name}
-                </h5>
+                <Image
+                  className="rounded-t-lg w-full h-auto"
+                  src={`https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`}
+                  alt=""
+                  width={500}
+                  height={500}
+                />
               </Link>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {item.release_date ? item.release_date : item.first_air_date}
-              </p>
+              <div className="p-5">
+                <Link href={path}>
+                  <h5 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
+                    {item.title ? item.title : item.name}
+                  </h5>
+                </Link>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  {item.release_date ? item.release_date : item.first_air_date}
+                </p>
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+
     </>
   );
 };

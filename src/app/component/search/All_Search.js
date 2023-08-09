@@ -34,11 +34,11 @@ const All_Search = ({ searchData, searchID }) => {
           <div className="max-w-full min-h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" key={item.id}>
             <Link href={path}>
               <Image
-                className="rounded-t-lg"
+                className="rounded-t-lg w-full h-auto"
                 src={poster}
                 alt=""
-                width={305}
-                height={100}
+                width={500}
+                height={500}
               />
             </Link>
             <div className="p-5">

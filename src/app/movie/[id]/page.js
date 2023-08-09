@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AuthRequiredError } from "@/lib/exceptions";
 
 export async function generateMetadata({ params }) {
   // read route params
@@ -19,7 +20,7 @@ const getDataDetails = async (id) => {
   );
 
   if (!res) {
-    throw new Error("Error to fetch Data");
+ throw new AuthRequiredError();
   }
 
   return res.json();
