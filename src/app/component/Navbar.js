@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 // import { useRouter } from 'next/navigation'
 import { useState } from "react";
 import Image from "next/image";
+import logo from '../../../public/favlogo.png'
 
 const Navbar = () => {
   // const [search, setSearch] = useState("")
@@ -25,13 +26,13 @@ const Navbar = () => {
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center">
-          {/* <Image
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8 mr-3"
+          <Image
+            src={logo}
+            className="w-12 h-12 mr-2 rounded-full"
             alt="Flowbite Logo"
             width={100}
             height={100}
-          /> */}
+          />
           <span className="self-center text-2xl font-bold whitespace-nowrap dark:text-white">
             Cinezone
           </span>
@@ -66,7 +67,7 @@ const Navbar = () => {
             />
           </div>
           <button
-            type="button"
+            type="submit"
             className="text-white bg-blue-700 rounded-r-lg hover:bg-blue-800 font-medium text-sm px-3 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none"
           >
             Search
