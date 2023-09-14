@@ -15,10 +15,8 @@ import Link from "next/link";
 const SwiperTV = ({onTheAir}) => {
   return (
     <>
- 
-    <h1 className="col-span-4 sm:col-span-2 mt-20 mx-auto max-w-screen-xl md:col-span-3 lg:col-span-4 text-center font-semibold text-2xl subpixel-antialiased py-2 mb-5 shadow-lg shadow-blue-500/50 border-4 border-blue-800 bg-slate-200">
-    ON THE AIR
-      </h1>
+ <div className="xl:max-w-screen-xl xl:mx-auto sm:px-4 py-20">
+ <h1 className="mb-4 text-center text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span className="text-transparent bg-clip-text bg-gradient-to-r to-yellow-600 from-orange-400">ON THE</span> AIR</h1>
     <div className="xl:max-w-screen-xl xl:mx-auto sm:px-4 pb-20">
       <Swiper
         slidesPerView={1}
@@ -49,7 +47,7 @@ const SwiperTV = ({onTheAir}) => {
               <SwiperSlide key={item.id}>
                 <Link href={`/tv-show/${item.id}`}>
                   <Image
-                    className="rounded-t-lg w-full h-auto"
+                    className="rounded-t-lg w-full h-auto sm:px-0 min-[320px]:gap-10 min-[320px]:px-9 min-[320px]:mb-14 min-[320px]:mt-10"
                     src={poster}
                     alt=""
                     width={500}
@@ -60,6 +58,7 @@ const SwiperTV = ({onTheAir}) => {
             );
           })}
       </Swiper>
+      </div>
       </div>
     </>
   );

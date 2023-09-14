@@ -17,9 +17,8 @@ const SwiperMovie = ({ upComing }) => {
   return (
     <>
       <div className="xl:max-w-screen-xl xl:mx-auto sm:px-4 py-20">
-        <h1 className="col-span-4 sm:col-span-2 mx-auto max-w-screen-xl md:col-span-3 lg:col-span-4 text-center font-semibold text-2xl subpixel-antialiased py-2 mb-5 shadow-lg shadow-blue-500/50 border-4 border-blue-800 bg-slate-200">
-          UP COMING MOVIE
-        </h1>
+      <h1 class="mb-4 text-center text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-yellow-600 from-orange-400">UP COMING</span> MOVIE</h1>
+        <div>
         <Swiper
           slidesPerView={1}
           spaceBetween={10}
@@ -48,7 +47,7 @@ const SwiperMovie = ({ upComing }) => {
               <SwiperSlide key={item.id}>
                 <Link href={`/movie/${item.id}`}>
                   <Image
-                    className="rounded-t-lg  w-full h-auto"
+                    className="rounded-t-lg w-full h-auto sm:px-0 min-[320px]:gap-10 min-[320px]:px-9 min-[320px]:mb-14 min-[320px]:mt-10"
                     src={`https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`}
                     alt=""
                     width={500}
@@ -59,6 +58,7 @@ const SwiperMovie = ({ upComing }) => {
             );
           })}
         </Swiper>
+        </div>
       </div>
     </>
   );

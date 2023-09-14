@@ -6,10 +6,9 @@ import TvPagination from "./TvPagination";
 const AiringToday = ({popular, pageValue}) => {
   return (
     <>
-        <h1 className="col-span-4 sm:col-span-2 mx-auto max-w-screen-xl md:col-span-3 lg:col-span-4 text-center font-semibold text-2xl subpixel-antialiased py-2 mb-5 shadow-lg shadow-blue-500/50 border-4 border-blue-800 bg-slate-200">
-          POPULAR TV SHOW
-        </h1>
-      <div className="grid grid-cols-1 max-w-screen-xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 items-center justify-between mx-auto p-4">
+     <div className="xl:max-w-screen-xl xl:mx-auto sm:px-4 py-20">
+        <h1 className="mb-4 text-center text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span className="text-transparent bg-clip-text bg-gradient-to-r to-yellow-600 from-orange-400">POPULAR</span> TV SHOW</h1>
+      <div className="grid grid-cols-1 max-w-screen-xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 items-center justify-between mx-auto p-4 min-[320px]:gap-10 min-[320px]:px-9 min-[320px]:mb-10 min-[320px]:mt-10">
        {popular.results.map((item) => {
         const poster = item.poster_path ? `https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}` : errorPoster
         return (
@@ -37,9 +36,10 @@ const AiringToday = ({popular, pageValue}) => {
         )
        })}
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center min-[320px]:px-9 min-[320px]:mb-10 min-[320px]:mt-10">
           <TvPagination popularPage={[popular.total_pages, pageValue]}/>
         </div>
+         </div>
     </>
   );
 };
