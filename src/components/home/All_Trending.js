@@ -45,7 +45,7 @@ const All_Trending = async () => {
       <h1 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center mb-4 text-3xl font-extrabold leading-none tracking-tight text-amber-500 md:text-4xl dark:text-gray-400 dark:bg-amber-800 bg-slate-800 py-2">
         All Trending
       </h1>
-      <div className="grid grid-cols-1 max-w-screen-xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 items-center justify-between mx-auto p-4 min-[320px]:gap-10 min-[320px]:px-9 min-[320px]:mb-10 min-[320px]:mt-10">
+      <div className="grid grid-cols-1 max-w-screen-xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-5 items-center justify-between mx-auto p-4 min-[320px]:grid-cols-2 min-[320px]:gap-3 min-[320px]:px-5 min-[320px]:mb-10 min-[320px]:mt-10">
         {!data && <HomeLoading />}
 
         {data.results.map((item) => {
@@ -64,9 +64,9 @@ const All_Trending = async () => {
                   height={500}
                 />
               </Link>
-              <div className="p-5">
+              <div className="sm:p-5 min-[320px]:p-2">
                 <Link href={path}>
-                  <h5 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
+                  <h5 className="mb-2 sm:text-2xl font-bold text-gray-900 dark:text-gray-300 min-[320px]:text-md">
                     {item.title ? item.title : item.name}
                   </h5>
                 </Link>
