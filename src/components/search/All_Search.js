@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import error from "../../../../public/error-poster.png"
+import error from "../../../public/error-poster.png"
 // {
 //   adult: false,
 //   backdrop_path: '/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg',
@@ -22,10 +22,10 @@ import error from "../../../../public/error-poster.png"
 const All_Search = ({ searchData, searchID }) => {
   return (
     <>
-     <h1 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center text-amber-500 font-semibold text-3xl subpixel-antialiased bg-gray-800 py-2">
+     <h1 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center mb-4 text-3xl font-extrabold leading-none tracking-tight text-amber-500 md:text-4xl dark:text-gray-400 bg-amber-800 py-2">
         Search: <span className="text-white">{searchID.split('%20').join(' ')}</span>
       </h1>
-    <div className="grid grid-cols-1 max-w-screen-xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 items-center justify-between mx-auto p-4">
+    <div className="grid grid-cols-1 max-w-screen-xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 items-center justify-between mx-auto p-4 min-[320px]:gap-10 min-[320px]:px-9 min-[320px]:mb-10 min-[320px]:mt-10">
      
       {searchData?.map((item) => {
         const path = item.title ? `/movie/${item.id}` : `/tv-show/${item.id}` 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import errorPoster from "../../../../public/error-poster1.png";
+import errorPoster from "../../../public/error-poster1.png";
 import MoviePagination from "./MoviePagination";
 
 const NowPlaying = ({ popular, pageValue }) => {

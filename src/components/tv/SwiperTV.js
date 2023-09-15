@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import errorPoster from '../../../../public/error-poster1.png'
+import errorPoster from '../../../public/error-poster1.png'
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";

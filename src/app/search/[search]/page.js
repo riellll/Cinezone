@@ -1,14 +1,13 @@
-import All_Search from "@/app/component/search/All_Search"
+import All_Search from "@/components/search/All_Search";
 
 export async function generateMetadata({ params }) {
   // read route params
-  const search = params.search
- 
- 
+  const search = params.search;
+
   return {
-    title: search.split('%20').join(' '),
-    description: 'asdasdasd'
-  }
+    title: search.split("%20").join(" "),
+    description: "asdasdasd",
+  };
 }
 
 const getData = async (search) => {
@@ -24,15 +23,11 @@ const getData = async (search) => {
   return res.json();
 };
 
-
-
-const Search = async ({params}) => {
-    const data = await getData(params.search);
+const Search = async ({ params }) => {
+  const data = await getData(params.search);
   // console.log(params.search);
 
-  return (
-    <All_Search searchData={data.results} searchID={params.search}/>
-  )
-}
+  return <All_Search searchData={data.results} searchID={params.search} />;
+};
 
-export default Search
+export default Search;

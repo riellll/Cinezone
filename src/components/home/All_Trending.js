@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import HomeLoading from "./loading";
+import HomeLoading from "../../app/loading";
 // import { Suspense } from "react";
 // import Pagination from "./Pagination";
 
@@ -37,12 +37,12 @@ const getData = async () => {
 
 const All_Trending = async () => {
   const data = await getData();
- /*  const page =
+  /*  const page =
     typeof searchParams.page === "string" ? Number(searchParams.page) : 1; */
   // console.log(searchPage);
   return (
     <>
-      <h1 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center mb-4 text-3xl font-extrabold leading-none tracking-tight text-amber-500 md:text-4xl dark:text-white bg-gray-800 py-2">
+      <h1 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center mb-4 text-3xl font-extrabold leading-none tracking-tight text-amber-500 md:text-4xl dark:text-gray-400 bg-amber-800 py-2">
         All Trending
       </h1>
       <div className="grid grid-cols-1 max-w-screen-xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 items-center justify-between mx-auto p-4 min-[320px]:gap-10 min-[320px]:px-9 min-[320px]:mb-10 min-[320px]:mt-10">
@@ -78,7 +78,6 @@ const All_Trending = async () => {
           );
         })}
       </div>
-
     </>
   );
 };

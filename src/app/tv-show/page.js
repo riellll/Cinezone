@@ -1,5 +1,5 @@
-import AiringToday from "../component/tv/AiringToday"
-import SwiperTV from "../component/tv/SwiperTV"
+import AiringToday from "../../components/tv/AiringToday"
+import SwiperTV from "../../components/tv/SwiperTV"
 import { AuthRequiredError } from "@/lib/exceptions";
 export const metadata = {
   title: 'TV-Show',
@@ -39,7 +39,7 @@ const page = async ({searchParams}) => {
   // console.log(onTheAirData);
   return (
     <>
-    <h2 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center mb-4 text-3xl font-extrabold leading-none tracking-tight text-amber-500 md:text-4xl dark:text-white bg-gray-800 py-2">
+    <h2 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center mb-4 text-3xl font-extrabold leading-none tracking-tight text-amber-500 md:text-4xl dark:text-gray-400 bg-amber-800 py-2">
         Tv Show
       </h2>
       <SwiperTV onTheAir={onTheAirData.results}/>
