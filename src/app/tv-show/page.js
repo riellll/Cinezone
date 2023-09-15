@@ -39,7 +39,7 @@ const page = async ({searchParams}) => {
   // console.log(onTheAirData);
   return (
     <>
-    <h2 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center mb-4 text-3xl font-extrabold leading-none tracking-tight text-amber-500 md:text-4xl dark:text-gray-400 bg-amber-800 py-2">
+    <h2 className="col-span-4 sm:col-span-2 md:col-span-3 lg:col-span-4 text-center mb-4 text-3xl font-extrabold leading-none tracking-tight text-amber-500 md:text-4xl dark:text-gray-400 dark:bg-amber-800 bg-slate-800 py-2">
         Tv Show
       </h2>
       <SwiperTV onTheAir={onTheAirData.results}/>

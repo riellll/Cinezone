@@ -37,11 +37,11 @@ const MovieDetails = async ({ params }) => {
             className=""
             src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
             alt=""
-            width={305}
+            width={300}
             height={200}
           />
         </div>
-        <div className="max-w-2xl text-gray-700 text-lg dark:text-white">
+        <div className="max-w-sm text-gray-700 text-lg dark:text-white sm:px-0 min-[320px]:px-8">
           <h1 className="text-4xl font-bold my-3 text-center lg:text-left">
             {movie.title}
           </h1>

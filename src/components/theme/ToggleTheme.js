@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 const ToggleTheme = () => {
     const {resolvedTheme, setTheme} = useTheme();
     const [toggletheme, setToggleTheme] = useState(false)
-    console.log(toggletheme)
+    // console.log(toggletheme)
   return (
     <>
     <label className="relative inline-flex text-center items-center mr-5 cursor-pointer">

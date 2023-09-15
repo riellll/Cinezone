@@ -41,6 +41,12 @@ const SwiperMovie = ({ upComing }) => {
           }}
           modules={[Pagination]}
           className="mySwiper"
+          style={{
+            "--swiper-pagination-color": "#FFBA08",
+            "--swiper-pagination-bullet-inactive-color": "#999999",
+            "--swiper-pagination-bullet-inactive-opacity": "1",
+            "--swiper-pagination-bullet-size": "7px",
+          }}
         >
           {upComing.map((item) => {
             return (

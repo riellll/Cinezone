@@ -17,7 +17,7 @@ const SwiperTV = ({onTheAir}) => {
     <>
  <div className="xl:max-w-screen-xl xl:mx-auto sm:px-4 py-20">
  <h1 className="mb-4 text-center text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span className="text-transparent bg-clip-text bg-gradient-to-r to-yellow-600 from-orange-400">ON THE</span> AIR</h1>
-    <div className="xl:max-w-screen-xl xl:mx-auto sm:px-4 pb-20">
+    <div className="xl:max-w-screen-xl xl:mx-auto sm:px-4 pb-20 text-white">
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -40,6 +40,12 @@ const SwiperTV = ({onTheAir}) => {
         }}
         modules={[Pagination]}
         className="mySwiper"
+        style={{
+          "--swiper-pagination-color": "#FFBA08",
+          "--swiper-pagination-bullet-inactive-color": "#999999",
+          "--swiper-pagination-bullet-inactive-opacity": "1",
+          "--swiper-pagination-bullet-size": "7px",
+        }}
       >
            {onTheAir.map((item) => {
             const poster = item.poster_path ? `https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}` : errorPoster
