@@ -17,7 +17,7 @@ import {
 import ToggleTheme from "../theme/ToggleTheme";
 
 const Navbarr = () => {
-  const [searchHidden, setSearchHidden] = useState(false);
+  const [searchHidden, setSearchHidden] = useState(true);
   const pathname = usePathname();
   const router = useRouter();
 
