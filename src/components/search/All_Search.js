@@ -41,9 +41,9 @@ const All_Search = ({ searchData, searchID }) => {
                 height={500}
               />
             </Link>
-            <div className="p-5">
+            <div className="sm:p-5 min-[320px]:p-2">
               <Link href={path}>
-                <h5 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
+                <h5 className="mb-2 sm:text-2xl font-bold text-gray-900 dark:text-gray-300 min-[320px]:text-md">
                   {item.title
                     ? item.title
                     : item.name}
